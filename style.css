@@ -54,14 +54,14 @@ body {
 .button.equal.button:hover{
     opacity: 0.9;
 }
-.button.advanced {
+.button.more {
     background: #4caf50;
     color: #fff;
 }
 .button:hover {
     opacity: 0.9;
 }
-.advanced-buttons {
+.more-buttons {
     display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;

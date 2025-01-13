@@ -5,7 +5,6 @@ function updateDisplay() {
     display.value = currentInput || '0';
 }
 
-
 function appendToDisplay(value) {
 
     if (/[\+\-\*\/]$/.test(currentInput) && /[\+\-\*\/]/.test(value)) {
@@ -15,8 +14,7 @@ function appendToDisplay(value) {
     updateDisplay();
 }
 
-
-function calculateResult() {
+function Result() {
     try {
         currentInput = eval(currentInput).toString();
     } catch (error) {
@@ -28,7 +26,7 @@ function calculateResult() {
 function clearDisplay() {
     currentInput = '';
     updateDisplay();
-    
+
 }
 
 function deleteLast() {
@@ -37,7 +35,7 @@ function deleteLast() {
 }
 
 function toggleAdvanced() {
-    const advancedButtons = document.getElementById('advanced-buttons');
+    const advancedButtons = document.getElementById('more-buttons');
     advancedButtons.style.display =
         advancedButtons.style.display === 'grid' ? 'none' : 'grid';
 }
@@ -45,17 +43,17 @@ function toggleAdvanced() {
 function calculateTrig(func) { 
     try {
         const lastNumber = parseFloat(currentInput.match(/(\d+\.?\d*)$/)[0]);
-        const radians = lastNumber * (Math.PI / 180);
+        const radian = lastNumber * (Math.PI / 180);
         let result;
         switch (func) {
             case 'sin':
-                result = Math.sin(radians);
+                result = Math.sin(radian);
                 break;
             case 'cos':
-                result = Math.cos(radians);
+                result = Math.cos(radian);
                 break;
             case 'tan':
-                result = Math.tan(radians);
+                result = Math.tan(radian);
                 break;
             default:
                 result = 0;
